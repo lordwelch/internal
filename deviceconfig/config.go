@@ -72,6 +72,17 @@ var (
 			BootPartitionStartLBA: 2048, // 1MiB from start of disk
 			Slug:                  "nanopi_neo",
 		},
+		"FriendlyElec CM3588 NAS": {
+			// https://opensource.rock-chips.com/wiki_Partitions
+			RootDeviceFiles: []RootFile{
+				// u-boot-rockchip.bin is an überpackage that include TPL, SPL, U-Boot and u-boot.dtb.
+				// u-boot can build it as a single file with `make rock64-rk3328_defconfig && make u-boot-rockchip.bin`
+				// and its easier to work with instead of dealing with separate files.
+				{"u-boot-rockchip.bin", 64 * sectorSize, 32704 * sectorSize}, // sectors 64 - 32768
+			},
+			BootPartitionStartLBA: 32768, // 16MiB from start of disk
+			Slug:                  "rock64",
+		},
 	}
 )
 
