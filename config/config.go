@@ -269,6 +269,9 @@ func (s *Struct) GokrazyPackagesOrDefault() []string {
 			"github.com/gokrazy/gokrazy/cmd/ntp",
 			"github.com/gokrazy/gokrazy/cmd/randomd",
 			"github.com/gokrazy/gokrazy/cmd/heartbeat",
+			"gitea.narnian.us/lordwelch/dmesg",
+			"github.com/gokrazy/serial-busybox",
+			"github.com/gokrazy/breakglass",
 		}
 	}
 	return *s.GokrazyPackages
@@ -277,7 +280,7 @@ func (s *Struct) GokrazyPackagesOrDefault() []string {
 func (s *Struct) KernelPackageOrDefault() string {
 	if s.KernelPackage == nil {
 		// KernelPackage unspecified, fall back to the default.
-		return "github.com/gokrazy/kernel.rpi"
+		return "github.com/gokrazy/kernel"
 	}
 	return *s.KernelPackage
 }
