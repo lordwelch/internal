@@ -265,7 +265,7 @@ func (s *Struct) SerialConsoleOrDefault() string {
 func (s *Struct) GokrazyPackagesOrDefault() []string {
 	if s.GokrazyPackages == nil {
 		return []string{
-			"github.com/gokrazy/gokrazy/cmd/dhcp",
+			"gitea.narnian.us/gokrazy/dhcp",
 			"github.com/gokrazy/gokrazy/cmd/ntp",
 			"github.com/gokrazy/gokrazy/cmd/randomd",
 			"github.com/gokrazy/gokrazy/cmd/heartbeat",
